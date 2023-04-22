@@ -13,7 +13,7 @@
 int _printf(const char *format, ...)
 {
 	va_list arg;
-	int i = 0, j = 0, char_printed = 0;
+	int char_printed;
 	Conversion con[] = {
 		{"c", handle_c},
 		{"s", handle_s},
@@ -21,29 +21,55 @@ int _printf(const char *format, ...)
 
 	va_start(arg, format);
 		if (format)
-			while (*format)
-			{
-				j = 0;
-				if (*format != '%')
-				{
-					write(1, format, 1);
-					char_printed++;
-				}
-				else
-				{
-					while (j < CON_LEN && (*(format + 1)) != *con[j].format)
-						j++;
-
-					if (j < CON_LEN)
-					{
-						char_printed += con[j].f(arg);
-						format++;
-					}
-				}
-				format++;
-				i++;
-			}
+			char_printed = print_buffer(format, con, arg);
 	va_end(arg);
+	return (char_printed);
+}
+
+/**
+ * print_buffer - print puffer
+ * @format: string
+ * @con: strunct
+ * @arg: va_list
+ *
+ * Return: string length
+ */
+
+int print_buffer(const char *format, Conversion *con, va_list arg)
+{
+	int j, char_printed = 0;
+
+	while (*format)
+	{
+		j = 0;
+		if (*format != '%')
+		{
+			write(1, format, 1);
+			char_printed++;
+		}
+		else
+		{
+			if (*format == '%' && *(format + 1) == '%')
+			{
+				write(1, (format + 1), 1);
+				char_printed++;
+				format += 2;
+				continue;
+			}
+			else
+			{
+				while (j < CON_LEN && (*(format + 1)) != *con[j].format)
+					j++;
+
+				if (j < CON_LEN)
+				{
+					char_printed += con[j].f(arg);
+					format++;
+				}
+			}
+		}
+		format++;
+	}
 	return (char_printed);
 }
 

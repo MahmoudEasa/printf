@@ -30,4 +30,6 @@ int handle_X(va_list val);
 int handle_S(va_list val);
 int handle_p(va_list val);
 
+int print_buffer(const char *format, Conversion *con, va_list arg);
+
 #endif /* #ifndef MAIN_H */
