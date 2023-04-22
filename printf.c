@@ -1,7 +1,7 @@
 #include "main.h"
 #include <string.h>
 #include <stdio.h>
-#define CON_LEN 11
+#define CON_LEN 2 
 
 /**
  * _printf - produces output according to a format
@@ -49,11 +49,11 @@ int print_buffer(const char *format, Conversion *con, va_list arg)
 		}
 		else
 		{
-			if (*format == '%' && *(format + 1) == '%')
+			if (*(format + 1) == '%')
 			{
 				write(1, (format + 1), 1);
-				char_printed++;
 				format += 2;
+				char_printed++;
 				continue;
 			}
 			else
@@ -65,6 +65,11 @@ int print_buffer(const char *format, Conversion *con, va_list arg)
 				{
 					char_printed += con[j].f(arg);
 					format++;
+				}
+				else
+				{
+					write(1, format, 1);
+					char_printed++;
 				}
 			}
 		}
