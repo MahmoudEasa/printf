@@ -1,7 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
-#include <stdarg>
-#include <unistd>
+#include <stdarg.h>
+#include <unistd.h>
 
 /**
  * struct conversion - handle conversion specifiers
@@ -14,7 +14,7 @@
 typedef struct conversion
 {
 	char *format;
-	void (*f)(va_list);
+	int (*f)(va_list);
 } Conversion;
 
 int _printf(const char *format, ...);
@@ -27,7 +27,7 @@ int handle_u(va_list val);
 int handle_o(va_list val);
 int handle_x(va_list val);
 int handle_X(va_list val);
-int handle_s(va_list val);
+int handle_S(va_list val);
 int handle_p(va_list val);
 
 #endif /* #ifndef MAIN_H */
