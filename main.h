@@ -31,5 +31,6 @@ int handle_S(va_list val);
 int handle_p(va_list val);
 
 int print_buffer(const char *format, Conversion *con, va_list arg);
+void _write(const char *format, int *n);
 
 #endif /* #ifndef MAIN_H */
