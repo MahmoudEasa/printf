@@ -74,13 +74,14 @@ int handle_c(va_list val)
 int handle_s(va_list val)
 {
 	char *str;
-	int len = 0;
+	int len;
 
 	str = va_arg(val, char *);
 
 	if (str)
 	{
-		write(1, str, strlen(str));
+		len = strlen(str);
+		write(1, str, len);
 	}
 
 	return (len);
