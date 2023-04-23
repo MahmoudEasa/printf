@@ -6,24 +6,32 @@
  * handle_b - write a binary
  * @val: va_list
  *
- * Return: length 
+ * Return: length
  */
 
 int handle_b(va_list val)
 {
-	int num, i, len = 0;
+	int num, len = 0, i, num_h;
 	char binary[33];
-	binary[32] = '\0';
 
 	num = va_arg(val, int);
+	num_h = num;
 
-	for (i = num; i >= 0; i--)
+	while (num_h > 0)
 	{
-		binary[i] = (num & '1') ? '1' : '0';
-		num >>= 1;
+		len++;
+		num_h /= 2;
 	}
-	len = strlen(binary);
 
+	i = len - 1;
+	binary[len] = '\0';
+
+	while (num > 0)
+	{
+		binary[i] = (num % 2) + '0';
+		num /= 2;
+		i--;
+	}
 	write(1, binary, len);
 	return (len);
 }
