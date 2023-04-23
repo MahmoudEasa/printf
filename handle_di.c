@@ -11,12 +11,16 @@
 
 int handle_d(va_list val)
 {
-	int num;
+	int num, len = 0;
+	char str[20];
 
 	num = va_arg(val, int);
-	write(1, &num, sizeof(int));
+	sprintf(str, "%d", num);
+	len = strlen(str);
 
-	return (1);
+	write(1, str, len);
+
+	return (len);
 }
 
 /**
@@ -28,11 +32,15 @@ int handle_d(va_list val)
 
 int handle_i(va_list val)
 {
-	int num;
+	int num, len = 0;
+	char str[20];
 
 	num = va_arg(val, int);
-	write(1, &num, sizeof(int));
+	sprintf(str, "%d", num);
+	len = strlen(str);
 
-	return (1);
+	write(1, str, len);
+
+	return (len);
 }
 

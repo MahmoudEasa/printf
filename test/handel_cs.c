@@ -35,6 +35,17 @@ int main(void)
 
 	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
 
+	len = _printf("\n");
+	len2 = printf("\n");
+
+	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
+
+
+	len = _printf("\n44\n");
+	len2 = printf("\n44\n");
+
+	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
+
 
 	return (0);
 }
