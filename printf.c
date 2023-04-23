@@ -48,13 +48,11 @@ int print_buffer(const char *format, Conversion *con, va_list arg)
 		j = 0;
 		if (*format != '%')
 			_write(format, &char_printed);
-
 		else
 		{
 			if (*(format + 1) == '#')
 			{
-				_write(format, &char_printed);
-				format++;
+				_write(format++, &char_printed);
 				while (*(format + 1) == '#')
 					format++;
 				if (*(format + 1) == '%')
