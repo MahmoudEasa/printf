@@ -15,6 +15,10 @@ int handle_b(va_list val)
 	char binary[33];
 
 	num = va_arg(val, int);
+
+	if (num < 0)
+		num = -num;
+
 	num_h = num;
 
 	while (num_h > 0)

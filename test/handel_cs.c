@@ -50,7 +50,9 @@ int main(void)
 	_printf("\n=============================\n");
 
 	_printf("%b\n", 98);
-	printf("%b\n", 98);
+	_printf("%b\n", 0);
+	_printf("%b\n", -1);
+	_printf("%b\n", 5000);
 	
 	return (0);
 }
