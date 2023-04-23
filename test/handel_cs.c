@@ -1,6 +1,7 @@
 #include "../main.h"
 #include <stdio.h>
 #include <stddef.h>
+#include <limits.h>
 
 int main(void)
 {
@@ -51,8 +52,9 @@ int main(void)
 
 	_printf("%b\n", 98);
 	_printf("%b\n", 0);
-	_printf("%b\n", -1);
 	_printf("%b\n", 5000);
+	_printf("%b\n", INT_MAX);
+	_printf("%b\n", UINT_MAX);
 	
 	return (0);
 }

@@ -11,14 +11,10 @@
 
 int handle_b(va_list val)
 {
-	int num, len = 0, i, num_h;
+	unsigned int num, len = 0, i, num_h;
 	char binary[33];
 
-	num = va_arg(val, int);
-
-	if (num < 0)
-		num = -num;
-
+	num = va_arg(val, unsigned int);
 	num_h = num;
 
 	while (num_h > 0)
