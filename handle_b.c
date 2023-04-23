@@ -14,9 +14,15 @@ int handle_b(va_list val)
 	unsigned int num, len = 0, i, num_h;
 	char binary[33];
 
-	num = va_arg(val, int);
-	printf("\nnum: %u\n", num);
+	num = va_arg(val, unsigned int);
 	num_h = num;
+
+	if (num == 0)
+	{
+		sprintf(binary, "%u", num);
+		write(1, binary, strlen(binary));
+		return (1);
+	}
 
 	while (num_h > 0)
 	{
