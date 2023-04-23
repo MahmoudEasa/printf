@@ -34,5 +34,6 @@ int handle_R(va_list val);
 
 int print_buffer(const char *format, Conversion *con, va_list arg);
 void _write(const char *format, int *n);
+void handle_hash(const char *format, int *char_printed);
 
 #endif /* #ifndef MAIN_H */

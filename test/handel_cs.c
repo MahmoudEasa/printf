@@ -8,8 +8,8 @@ int main(void)
 	char ch = 'm', len, len2;
 	char *ptr = "Hello world!";
 
-	len = _printf("\n%%character is:\t %c%%\n string:\t %% %s x04[dd]{ff]}} \" \' done%%\n", ch, ptr);
-	len2 = printf("\n%%character is:\t %c%%\n string:\t %% %s x04[dd]{ff]}} \" \' done%%\n", ch, ptr);
+	len = _printf("\n%%character \\ is:\t %c%%\n string:\t %% %s x04[dd]{ff]}} \" \' done%%\n", ch, ptr);
+	len2 = printf("\n%%character \\ is:\t %c%%\n string:\t %% %s x04[dd]{ff]}} \" \' done%%\n", ch, ptr);
 
 	len = _printf("Length:[%d, %i]\n", len, len);
 	len2 = printf("Length:[%d, %i]\n", len2, len2);
@@ -21,8 +21,8 @@ int main(void)
 
 	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
 
-	len = _printf("\n######%v%#####v\t%c\t%c\t%s\t%s\n", 'C', 'H', "CHCH", "MMM");
-	len2 = printf("\n######%v%#####v\t%c\t%c\t%s\t%s\n", 'C', 'H', "CHCH", "MMM");
+	len = _printf("\n######%v%#####v %###%\t%c\t%c\t%s\t%s\n", 'C', 'H', "CHCH", "MMM");
+	len2 = printf("\n######%v%#####v %###%\t%c\t%c\t%s\t%s\n", 'C', 'H', "CHCH", "MMM");
 
 	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
 

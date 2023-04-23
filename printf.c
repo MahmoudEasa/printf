@@ -48,6 +48,7 @@ int print_buffer(const char *format, Conversion *con, va_list arg)
 		j = 0;
 		if (*format != '%')
 			_write(format, &char_printed);
+
 		else
 		{
 			if (*(format + 1) == '#')
@@ -56,9 +57,10 @@ int print_buffer(const char *format, Conversion *con, va_list arg)
 				format++;
 				while (*(format + 1) == '#')
 					format++;
+				if (*(format + 1) == '%')
+					format += 2;
 				continue;
 			}
-
 			if (*(format + 1) == '%')
 			{
 				_write((format + 1), &char_printed);
