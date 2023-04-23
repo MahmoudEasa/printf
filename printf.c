@@ -1,7 +1,6 @@
 #include "main.h"
 #include <string.h>
-#include <stdio.h>
-#define CON_LEN 2
+#define CON_LEN 4
 
 /**
  * _printf - produces output according to a format
@@ -17,11 +16,15 @@ int _printf(const char *format, ...)
 	Conversion con[] = {
 		{"c", handle_c},
 		{"s", handle_s},
+		{"d", handle_d},
+		{"i", handle_i},
 	};
 
 	va_start(arg, format);
 		if (format)
 			char_printed = print_buffer(format, con, arg);
+		else
+			return (-1);
 	va_end(arg);
 	return (char_printed);
 }
