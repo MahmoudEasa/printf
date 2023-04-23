@@ -1,6 +1,6 @@
 #include "main.h"
 #include <string.h>
-#define CON_LEN 4
+#define CON_LEN 5
 
 /**
  * _printf - produces output according to a format
@@ -18,6 +18,7 @@ int _printf(const char *format, ...)
 		{"s", handle_s},
 		{"d", handle_d},
 		{"i", handle_i},
+		{"b", handle_b},
 	};
 
 	va_start(arg, format);

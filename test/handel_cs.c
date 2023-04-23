@@ -47,6 +47,10 @@ int main(void)
 	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
 
 
+	_printf("\n=============================\n");
+
+	_printf("%b\n", 98);
+	
 	return (0);
 }
 
