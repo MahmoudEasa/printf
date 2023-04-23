@@ -29,6 +29,8 @@ int handle_x(va_list val);
 int handle_X(va_list val);
 int handle_S(va_list val);
 int handle_p(va_list val);
+int handle_r(va_list val);
+int handle_R(va_list val);
 
 int print_buffer(const char *format, Conversion *con, va_list arg);
 void _write(const char *format, int *n);
