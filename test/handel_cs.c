@@ -6,7 +6,7 @@
 int main(void)
 {
 	char ch = 'm', len, len2;
-	char *ptr = "Hello world!";
+	char *ptr = "Hello\n %% \\ ###%v%###v %33% %###% %s world!";
 	int p = 75;
 
 	len = _printf("\n%%character \\ is: %t%r%w% 0-.1v%4\t %c%%\n string:\t %% %s x04[dd]{ff]}} \" \' done%%%d\n", ch, ptr, p);
