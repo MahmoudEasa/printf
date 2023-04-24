@@ -6,7 +6,7 @@
 int main(void)
 {
 	char ch = 'm', len, len2;
-	char *ptr = "Hello world!";
+	char *ptr = "Hello\n %% \\ ###%v%###v %33% %###% %s world!";
 	int p = 75;
 	unsigned int ui;
 
