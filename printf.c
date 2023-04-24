@@ -19,6 +19,7 @@ int _printf(const char *format, ...)
 		{"d", handle_d},
 		{"i", handle_i},
 		{"b", handle_b},
+		{"u", handle_u},
 	};
 
 	va_start(arg, format);
