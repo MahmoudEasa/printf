@@ -5,13 +5,16 @@
 /**
  * handle_u - print the unsigned integer value
  * @val: va_list
+ * @flags: string
+ *
  * Return: return length
 */
 
-int handle_u(va_list val)
+int handle_u(va_list val, char *flags)
 {
 	unsigned int num, len = 0;
 	char str[1024];
+	(void)flags;
 
 	num = va_arg(val, unsigned int);
 	sprintf(str, "%u", num);

@@ -5,14 +5,16 @@
 /**
  * handle_d - write a decimal (base 10) number
  * @val: va_list
+ * @flags: strign
  *
  * Return: string length
  */
 
-int handle_d(va_list val)
+int handle_d(va_list val, char *flags)
 {
 	int num, len = 0;
 	char str[20];
+	(void)flags;
 
 	num = va_arg(val, int);
 	sprintf(str, "%d", num);
@@ -26,14 +28,16 @@ int handle_d(va_list val)
 /**
  * handle_i - write an integer
  * @val: va_list
+ * @flags: string
  *
  * Return: string length
  */
 
-int handle_i(va_list val)
+int handle_i(va_list val, char *flags)
 {
 	int num, len = 0;
 	char str[20];
+	(void)flags;
 
 	num = va_arg(val, int);
 	sprintf(str, "%d", num);
