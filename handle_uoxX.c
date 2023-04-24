@@ -12,8 +12,7 @@
 
 int handle_u(va_list val, char *flags)
 {
-	unsigned int num = va_arg(val, unsigned int);
-	int len = 0;
+	unsigned long int num = va_arg(val, unsigned long int), len = 0;
 	char str[1024];
 	(void)flags;
 
@@ -31,7 +30,7 @@ int handle_u(va_list val, char *flags)
 */
 int handle_o(va_list val, char *flags)
 {
-	unsigned int num = va_arg(val, unsigned int), len = 0, n;
+	unsigned long int num = va_arg(val, unsigned long int), len = 0, n;
 	char str[1024];
 
 	(void)flags;
@@ -62,10 +61,11 @@ int handle_o(va_list val, char *flags)
 
 int handle_x(va_list val, char *flags)
 {
-	unsigned int num = va_arg(val, unsigned int), len = 0, n;
+	unsigned long int num = va_arg(val, unsigned long int), len = 0, n;
 	char str[1024];
 
 	(void)flags;
+	n = num;
 	while (n > 0)
 	{
 		len++;
@@ -83,9 +83,10 @@ int handle_x(va_list val, char *flags)
 */
 int handle_X(va_list val, char *flags)
 {
-	unsigned int num = va_arg(val, unsigned int), len = 0, n, i;
+	unsigned long int num = va_arg(val, unsigned long int), len = 0, n, i;
 	char str[1024];
-
+	
+	n= num;
 	(void)flags;
 	while (n > 0)
 	{
