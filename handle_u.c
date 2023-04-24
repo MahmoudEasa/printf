@@ -16,4 +16,5 @@ int handle_u(va_list val)
 	num = va_arg(val, unsigned int);
 	sprintf(str, "%u", num);
 	write(1, str, strlen(str));
+	return (len);
 }
