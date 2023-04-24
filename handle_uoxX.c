@@ -34,6 +34,7 @@ int handle_o(va_list val, char *flags)
 	unsigned int num = va_arg(val, unsigned int), len = 0, n;
 	char str[1024];
 
+	(void)flags;
 	if (num == 0)
 	{
 		char zero = '0';
@@ -47,8 +48,58 @@ int handle_o(va_list val, char *flags)
 		len++;
 		n /= 8;
 	}
-	(void)flags;
 	sprintf(str, "%o", num);
 	write(1, str, len);
+	return (len);
+}
+
+/**
+ * handle_x - print hexadecimal values in lowercase
+ * @val: input value
+ * @flags: string
+ * Return: return length
+*/
+
+int handle_x(va_list val, char *flags)
+{
+	unsigned int num = va_arg(val, unsigned int), len = 0, n;
+	char str[1024];
+
+	(void)flags;
+	while (n > 0)
+	{
+		len++;
+		n /= 16;
+	}
+	sprintf(str, "%x", num);
+	write(1, str, len);
+	return (len);
+}
+/**
+ * handle_X - print hexadecimal in uppercase
+ * @val: input value
+ * @flags: string
+ * Return: return length
+*/
+int handle_X(va_list val, char *flags)
+{
+	unsigned int num = va_arg(val, unsigned int), len = 0, n, i;
+	char str[1024];
+
+	(void)flags;
+	while (n > 0)
+	{
+		len++;
+		n /= 16;
+	}
+	sprintf(str, "%X", num);
+	for (i = 0 ; str[i] != '\0' ; i++)
+	{
+		if (str[i] >= 'a' && str[i] <= 'z')
+		{
+			str[i] -= 32;
+		}
+	write(1, &str[i], 1);
+	}
 	return (len);
 }
