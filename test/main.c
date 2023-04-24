@@ -1,6 +1,6 @@
 #include <limits.h>
 #include <stdio.h>
-#include "../main_o.h"
+#include "main.h"
 
 /**
  * main - Entry point
@@ -42,3 +42,4 @@ int main(void)
     printf("Unknown:[%r]\n");
     return (0);
 }
+
