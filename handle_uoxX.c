@@ -12,12 +12,17 @@
 
 int handle_u(va_list val, char *flags)
 {
-	unsigned long int num = va_arg(val, unsigned long int), len = 0;
+	unsigned long int num = va_arg(val, unsigned long int), len = 0, n;
 	char str[1024];
-	(void)flags;
 
+	(void)flags;
+	n = num;
+	while (n > 0)
+	{
+		len++;
+		n /= 10;
+	}
 	sprintf(str, "%u", num);
-	len = strlen(str);
 
 	write(1, str, len);
 	return (len);
@@ -85,8 +90,8 @@ int handle_X(va_list val, char *flags)
 {
 	unsigned long int num = va_arg(val, unsigned long int), len = 0, n, i;
 	char str[1024];
-
-	n = num;
+	
+	n= num;
 	(void)flags;
 	while (n > 0)
 	{
