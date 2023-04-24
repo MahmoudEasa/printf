@@ -41,11 +41,10 @@ int _printf(const char *format, ...)
 
 int print_buffer(const char *format, Conversion *con, va_list arg)
 {
-	int j, char_printed = 0;
+	int char_printed = 0;
 
 	while (*format)
 	{
-		j = 0;
 		if (*format != '%')
 			_write(format, &char_printed);
 		else
@@ -66,17 +65,8 @@ int print_buffer(const char *format, Conversion *con, va_list arg)
 				continue;
 			}
 			else
-			{
-				while (j < CON_LEN && (*(format + 1)) != *con[j].format)
-					j++;
-				if (j < CON_LEN)
-				{
-					char_printed += con[j].f(arg);
-					format++;
-				}
-				else
-					_write(format, &char_printed);
-			}
+				format += handel_fun(format, con, CON_LEN,
+						&char_printed, _write, arg);
 		}
 		format++;
 	}
