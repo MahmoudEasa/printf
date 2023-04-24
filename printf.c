@@ -1,5 +1,6 @@
 #include "main.h"
 #include <string.h>
+#include <stdio.h>
 #define CON_LEN 5
 
 /**
@@ -42,15 +43,20 @@ int _printf(const char *format, ...)
 
 int print_buffer(const char *format, Conversion *con, va_list arg)
 {
-	int j, char_printed = 0;
+	char flags[10];
+	int char_printed = 0, move;
 
 	while (*format)
 	{
-		j = 0;
 		if (*format != '%')
 			_write(format, &char_printed);
 		else
 		{
+			if (*(format + 1) == 't')
+			{
+				format += 2;
+				continue;
+			}
 			if (*(format + 1) == '#')
 			{
 				_write(format++, &char_printed);
@@ -68,15 +74,9 @@ int print_buffer(const char *format, Conversion *con, va_list arg)
 			}
 			else
 			{
-				while (j < CON_LEN && (*(format + 1)) != *con[j].format)
-					j++;
-				if (j < CON_LEN)
-				{
-					char_printed += con[j].f(arg);
-					format++;
-				}
-				else
-					_write(format, &char_printed);
+				move = handle_flags(format, flags);
+				format += handel_fun(format, con, CON_LEN,
+						&char_printed, _write, arg, flags, move);
 			}
 		}
 		format++;
@@ -99,13 +99,15 @@ void _write(const char *format, int *n)
 /**
  * handle_c - write a character
  * @val: va_list
+ * @flags: string
  *
  * Return: 1
  */
 
-int handle_c(va_list val)
+int handle_c(va_list val, char *flags)
 {
 	char c;
+	(void)flags;
 
 	c = va_arg(val, int);
 	write(1, &c, 1);
@@ -116,14 +118,16 @@ int handle_c(va_list val)
 /**
  * handle_s - write a string
  * @val: va_list
+ * @flags: string
  *
  * Return: string length
  */
 
-int handle_s(va_list val)
+int handle_s(va_list val, char *flags)
 {
 	char *str;
 	int len;
+	(void)flags;
 
 	str = va_arg(val, char *);
 

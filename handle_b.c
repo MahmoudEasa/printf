@@ -5,14 +5,16 @@
 /**
  * handle_b - write a binary
  * @val: va_list
+ * @flags: string
  *
  * Return: length
  */
 
-int handle_b(va_list val)
+int handle_b(va_list val, char *flags)
 {
 	unsigned int num, len = 0, i, num_h;
 	char binary[33];
+	(void)flags;
 
 	num = va_arg(val, unsigned int);
 	num_h = num;
