@@ -1,8 +1,9 @@
 #include "../main.h"
 #include <stdio.h>
-
+#include <limits.h>
 int main(void)
 {
+	unsigned int ui;
         int ch = 'm', len, len2;
         char *ptr = "Hello world!";
 
@@ -21,7 +22,12 @@ int main(void)
 
         printf("\n_printf_len: %d printf_len: %d\n", len, len2);
 
+	printf("***********************\n");
+	
+	ui = (unsigned int)INT_MAX + 1024;
 
+	_printf("Unsigned:[%u]\n", ui);
+    	printf("Unsigned:[%u]\n", ui);
         return (0);
 }
 

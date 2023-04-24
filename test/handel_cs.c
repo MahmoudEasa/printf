@@ -8,6 +8,9 @@ int main(void)
 	char ch = 'm', len, len2;
 	char *ptr = "Hello\n %% \\ ###%v%###v %33% %###% %s world!";
 	int p = 75;
+	unsigned int ui;
+
+	ui = (unsigned int)INT_MAX + 1024;
 
 	len = _printf("\n%%character \\ is: %t%r%w% 0-.1v%4\t %c%%\n string:\t %% %s x04[dd]{ff]}} \" \' done%%%d\n", ch, ptr, p);
 	len2 = printf("\n%%character \\ is: %t%r%w% 0-.1v%4\t %c%%\n string:\t %% %s x04[dd]{ff]}} \" \' done%%%d\n", ch, ptr, p);
@@ -63,7 +66,11 @@ int main(void)
 	printf("\n_printf_len: %d\n", len);
 	len = _printf("%b\n", UINT_MAX);
 	printf("\n_printf_len: %d\n", len);
-	
+
+	_printf("\n=============================\n");
+
+	_printf("Unsigned:[%u]\n", ui);
+    	printf("Unsigned:[%u]\n", ui);
 	return (0);
 }
 
