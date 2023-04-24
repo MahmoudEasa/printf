@@ -10,10 +10,10 @@
 
 int handle_u(va_list val)
 {
-	int n, len = 0;
-	char str[20];
+	unsigned long int n, len = 0;
+	char str[];
 
-	n = va_arg(val, int);
+	n = va_arg(val, unsigned long int);
 	if (n >= 0)
 	{
 		sprintf(str, "%d", n);
