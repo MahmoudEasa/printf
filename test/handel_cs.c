@@ -7,9 +7,12 @@ int main(void)
 {
 	char ch = 'm', len, len2;
 	char *ptr = "Hello world!";
+	int p = 75;
 
-	len = _printf("\n%%character \\ is:\t %c%%\n string:\t %% %s x04[dd]{ff]}} \" \' done%%\n", ch, ptr);
-	len2 = printf("\n%%character \\ is:\t %c%%\n string:\t %% %s x04[dd]{ff]}} \" \' done%%\n", ch, ptr);
+	len = _printf("\n%%character \\ is:\t %c%%\n string:\t %% %s x04[dd]{ff]}} \" \' done%%%d\n", ch, ptr, p);
+	len2 = printf("\n%%character \\ is:\t %c%%\n string:\t %% %s x04[dd]{ff]}} \" \' done%%%d\n", ch, ptr, p);
+	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
+	_printf("\n=============================\n");
 
 	len = _printf("Length:[%d, %i]\n", len, len);
 	len2 = printf("Length:[%d, %i]\n", len2, len2);
@@ -50,11 +53,16 @@ int main(void)
 
 	_printf("\n=============================\n");
 
-	_printf("%b\n", 98);
-	_printf("%b\n", 0);
-	_printf("%b\n", 5000);
-	_printf("%b\n", INT_MAX);
-	_printf("%b\n", UINT_MAX);
+	len = _printf("%b\n", 98);
+	printf("\n_printf_len: %d\n", len);
+	len = _printf("%b\n", 0);
+	printf("\n_printf_len: %d\n", len);
+	len = _printf("%b\n", 5000);
+	printf("\n_printf_len: %d\n", len);
+	len = _printf("%b\n", INT_MAX);
+	printf("\n_printf_len: %d\n", len);
+	len = _printf("%b\n", UINT_MAX);
+	printf("\n_printf_len: %d\n", len);
 	
 	return (0);
 }
