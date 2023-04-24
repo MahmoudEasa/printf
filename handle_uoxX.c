@@ -85,8 +85,8 @@ int handle_X(va_list val, char *flags)
 {
 	unsigned long int num = va_arg(val, unsigned long int), len = 0, n, i;
 	char str[1024];
-	
-	n= num;
+
+	n = num;
 	(void)flags;
 	while (n > 0)
 	{
