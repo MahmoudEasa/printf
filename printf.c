@@ -106,7 +106,7 @@ int handle_c(va_list val)
 {
 	char c;
 
-	c = va_arg(val, int);
+	c = va_arg(val, char);
 	write(1, &c, 1);
 
 	return (1);
