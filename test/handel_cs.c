@@ -69,8 +69,9 @@ int main(void)
 
 	_printf("\n=============================\n");
 
-	_printf("Unsigned:[%u]\n", ui);
-    	printf("Unsigned:[%u]\n", ui);
+	len = _printf("Unsigned:[%u]\n", ui);
+    	len2 = printf("Unsigned:[%u]\n", ui);
+	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
 
 
 	_printf("\n===================================\n");
@@ -104,6 +105,13 @@ int main(void)
 
 	len2 = printf("Expected  %i %d\n", 0032, 0032);
 	len = _printf("Actual %i %d \n", 0032, 0032);
+	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
+
+
+	_printf("\n===================================\n");
+
+	len2 = printf("Expected  %li %ld\n", UINT_MAX, UINT_MAX);
+	len = _printf("Actual %li %ld \n", UINT_MAX, UINT_MAX);
 	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
 
 	return (0);

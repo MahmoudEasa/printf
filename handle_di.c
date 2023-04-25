@@ -17,11 +17,10 @@ int handle_d(va_list val, char *flags)
 	(void)flags;
 
 	num = va_arg(val, long int);
-	sprintf(str, "%d", num);
+	sprintf(str, "%ld", num);
 	len = strlen(str);
 
 	write(1, str, len);
-
 	return (len);
 }
 
@@ -40,7 +39,7 @@ int handle_i(va_list val, char *flags)
 	(void)flags;
 
 	num = va_arg(val, long int);
-	sprintf(str, "%i", num);
+	sprintf(str, "%li", num);
 	len = strlen(str);
 
 	write(1, str, len);
