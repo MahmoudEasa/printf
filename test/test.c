@@ -60,5 +60,11 @@ int main(void)
 	_len = _printf("Unsigned hexadecimal:[%x, %X]\n", neg, neg);
         len = printf("Unsigned hexadecimal:[%x, %X]\n", neg, neg);
         printf("\n_printf_len: %d printf_len: %d\n", _len, len);
+
+
+	printf("++++++++++++++++++++++++++++++++++++++++++++\n");
+
+
+
 	return (0);
 }
