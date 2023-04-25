@@ -80,6 +80,5 @@ int main(void)
 
 	 _len = _printf("Unknown:[%r]\n", str);
 	 len = printf("Unknown:[%r]\n", str);
-	printf("\n_printf_len: %d printf_len: %d\n", _len, len);
- 	 return (0);
+	return (0);
 }
