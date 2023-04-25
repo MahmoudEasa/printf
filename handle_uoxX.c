@@ -79,13 +79,7 @@ int handle_x(va_list val, char *flags)
 
 	(void)flags;
 	n = num;
-	if (num == 0)
-	{
-		char zero = '0';
 
-		write(1, &zero, 1);
-		return (0);
-	}
 	while (n > 0)
 	{
 		len++;
