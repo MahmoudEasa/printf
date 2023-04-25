@@ -14,7 +14,7 @@
 int handle_S(va_list val, char *flags)
 {
 	char *str;
-	char *ch;
+	char *ch = NULL;
 	int len;
 	(void)flags;
 
@@ -28,3 +28,4 @@ int handle_S(va_list val, char *flags)
 	write(1, str, len);
 	return (len);
 }
+
