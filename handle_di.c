@@ -45,11 +45,11 @@ int handle_i(va_list val, char *flags)
 
 	num = va_arg(val, long int);
 	if (*flags == 'l')
-		sprintf(str, "%li", num);
+		sprintf(str, "%ld", num);
 	else if (*flags == 'h')
-		sprintf(str, "%hi", num);
+		sprintf(str, "%hd", num);
 	else
-		sprintf(str, "%i", num);
+		sprintf(str, "%d", num);
 	len = strlen(str);
 
 	write(1, str, len);

@@ -104,21 +104,30 @@ int main(void)
 	_printf("\n===================================\n");
 
 	len2 = printf("Expected  %i %d\n", 0032, 0032);
-	len = _printf("Actual %i %d \n", 0032, 0032);
+	len = _printf("Actual    %i %d\n", 0032, 0032);
 	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
 
 
 	_printf("\n===================================\n");
 
 	len2 = printf("Expected  %li %ld\n", UINT_MAX, UINT_MAX);
-	len = _printf("Actual %li %ld \n", UINT_MAX, UINT_MAX);
+	len = _printf("Actual    %li %ld\n", UINT_MAX, UINT_MAX);
 	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
 
 	_printf("\n===================================\n");
 
-	len2 = printf("Expected  %hi %hd\n", INT_MAX, INT_MAX);
-	len = _printf("Actual %hi %hd \n", INT_MAX, INT_MAX);
+	len2 = printf("Expected  %hi %hd\n", NULL, NULL);
+	len = _printf("Actual    %hi %hd\n", NULL, NULL);
 	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
+
+	len2 = printf("Expected  %hi %hd\n", 0, 0);
+	len = _printf("Actual    %hi %hd\n", 0, 0);
+	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
+
+	len2 = printf("Expected  %hi %hd\n", -1, -1);
+	len = _printf("Actual    %hi %hd\n", -1, -1);
+	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
+
 
 
 	return (0);
