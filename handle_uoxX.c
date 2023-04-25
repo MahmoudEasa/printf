@@ -85,7 +85,7 @@ int handle_x(va_list val, char *flags)
 		char zero = '0';
 
 		write(1, &zero, 1);
-		return (0);
+		return (1);
 
 	}
 	while (n > 0)
@@ -105,17 +105,17 @@ int handle_x(va_list val, char *flags)
 */
 int handle_X(va_list val, char *flags)
 {
-	unsigned long int num = va_arg(val, unsigned long int), len = 0, i, n;
+	unsigned long int num = va_arg(val, unsigned long int), len = 0, i;
 	char str[1024];
 
 	(void)flags;
-	n = num;
-	
+	/*
 	while (n > 0)
 	{
 		len++;
 		n /= 16;
 	}
+	*/
 	sprintf(str, "%X", num);
 	for (i = 0 ; str[i] != '\0' ; i++)
 	{
@@ -124,6 +124,7 @@ int handle_X(va_list val, char *flags)
 			str[i] -= 32;
 		}
 	write(1, &str[i], 1);
+	len++;
 	}
 	return (len);
 }
