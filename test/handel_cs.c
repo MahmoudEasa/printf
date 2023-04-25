@@ -139,6 +139,15 @@ int main(void)
 	printf("Len:[%d]\n", len2);
 
 
+	len2 = printf("Expected  %hi %hd\n", LONG_MAX, LONG_MAX);
+	len = _printf("Actual    %hi %hd\n", LONG_MAX, LONG_MAX);
+	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
+
+	len2 = printf("Expected  %hi %hd\n", LONG_MIN, LONG_MIN);
+	len = _printf("Actual    %hi %hd\n", LONG_MIN, LONG_MIN);
+	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
+
+
 
 
 	return (0);
