@@ -139,6 +139,11 @@ int handle_s(va_list val, char *flags)
 		len = strlen(str);
 		write(1, str, len);
 	}
+	else
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 
 	return (len);
 }

@@ -71,6 +71,41 @@ int main(void)
 
 	_printf("Unsigned:[%u]\n", ui);
     	printf("Unsigned:[%u]\n", ui);
+
+
+	_printf("\n===================================\n");
+
+	len2 = printf("Expected     : %cc\n", 'a');
+	len = _printf("Actual     : %cc\n", 'a');
+	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
+	len2 = printf("Expected   : %c\n", 53);
+	len = _printf("Actual     : %c\n", 53);
+	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
+	len2 = printf("Expected   : %c.\n", '\0');
+	len = _printf("Actual     : %c.\n", '\0');
+	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
+	len2 = printf("Expected   : %%%c\n", 'y');
+	len = _printf("Actual     : %%%c\n", 'y');
+	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
+	len2 = printf("Expected   : %s\n", "holberton");
+	len = _printf("Actual     : %s\n", "holberton");
+	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
+	len2 = printf("Expected   : %s$\n", "");
+	len = _printf("Actual     : %s$\n", "");
+	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
+	len2 = printf("Expected   : %sschool\n", "holberton");
+	len = _printf("Actual     : %sschool\n", "holberton");
+	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
+	len2 = printf("Expected: %c%%%c%%%%%s%c%s%s\n", INT_MAX, INT_MIN, "hello", 0, "holberton", 0);
+	len = _printf("Actual  : %c%%%c%%%%%s%c%s%s\n", INT_MAX, INT_MIN, "hello", 0, "holberton", 0);
+	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
+
+	_printf("\n===================================\n");
+
+	len2 = printf("Expected  %i %d\n", 0032, 0032);
+	len = _printf("Actual %i %d \n", 0032, 0032);
+	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
+
 	return (0);
 }
 

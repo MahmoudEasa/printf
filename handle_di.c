@@ -12,11 +12,11 @@
 
 int handle_d(va_list val, char *flags)
 {
-	unsigned long int num, len = 0;
+	long int num, len = 0;
 	char str[20];
 	(void)flags;
 
-	num = va_arg(val, unsigned long int);
+	num = va_arg(val, long int);
 	sprintf(str, "%d", num);
 	len = strlen(str);
 
@@ -35,11 +35,11 @@ int handle_d(va_list val, char *flags)
 
 int handle_i(va_list val, char *flags)
 {
-	unsigned long int num, len = 0;
+	long int num, len = 0;
 	char str[20];
 	(void)flags;
 
-	num = va_arg(val, unsigned long int);
+	num = va_arg(val, long int);
 	sprintf(str, "%d", num);
 	len = strlen(str);
 
