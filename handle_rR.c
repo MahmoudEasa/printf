@@ -12,22 +12,19 @@
 int handle_r(va_list val, char *flags)
 {
 	char *str = va_arg(val, char *);
-	int len = 0, i, _len;
+	int len = 0, i;
 	char rev = str[0];
 	(void)flags;
 
-	while (str[len] != '\0')
-		len++;
+	len = strlen(str);
 
-	_len = len;
-	for (i = 0 ; i < len ; i++)
+	for (i = 0 ; i < len / 2 ; i++)
 	{
-		len--;
 		rev = str[i];
-		str[i] = str[len];
-		str[len] = rev;
+		str[i] = str[len - 1 - i];
+		str[len - 1 - i] = rev;
 	}
-	write(1, str, _len);
+	write(1, str, len);
 	return (len);
 }
 
