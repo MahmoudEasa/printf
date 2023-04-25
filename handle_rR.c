@@ -27,6 +27,7 @@ int handle_r(va_list val, char *flags)
 		str[i] = str[len];
 		str[len] = rev;
 	}
+	str[i] = '\0';
 	write(1, str, _len);
 	return (len);
 }
