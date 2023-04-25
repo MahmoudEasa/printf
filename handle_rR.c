@@ -18,6 +18,8 @@ int handle_r(va_list val, char *flags)
 
 	len = strlen(str);
 	
+	if (str == NULL)
+		return ("(Null)");
 	for (i = 0 ; i < len / 2 ; i++)
 	{
 		rev = str[i];
