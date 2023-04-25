@@ -45,7 +45,7 @@ int handel_fun(const char *format, Conversion *con, int CON_LEN,
  * Return: number to move pointer
  */
 
-int handle_flags(const char *format, char *flags)
+int get_flags(const char *format, char *flags)
 {
 	char *flags_handle = "+- lh.0123456789";
 	int i = 0, c = 1, j = 0, move_p = 0, f_len = strlen(flags_handle);

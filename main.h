@@ -37,6 +37,6 @@ void _write(const char *format, int *n);
 int handel_fun(const char *format, Conversion *con, int CON_LEN,
 	int *char_printed, void (*_write)(const char *, int *),
 	va_list arg, char *flags, int move);
-int handle_flags(const char *format, char *flags);
+int get_flags(const char *format, char *flags);
 
 #endif /* #ifndef MAIN_H */
