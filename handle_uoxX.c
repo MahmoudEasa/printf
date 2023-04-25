@@ -13,27 +13,21 @@
 
 int handle_u(va_list val, char *flags)
 {
-	unsigned int num = va_arg(val, unsigned int), len = 0, n;
+	unsigned long int num = va_arg(val, unsigned long int), len = 0;
 	char str[1024];
 
-	(void)flags;
-
+	if (*flags == 'l')
+		sprintf(str, "%lu", num);
+	else if (*flags == 'h')
+		sprintf(str, "%hu", num);
+	else
+		sprintf(str, "%u", num);
 	if (num == 0)
 	{
-		char zero = '0';
-
-		write(1, &zero, 1);
+		write(1, "0", 1);
 		return (1);
 	}
-	n = num;
-	while (n > 0)
-	{
-		len++;
-		n /= 10;
-	}
-	sprintf(str, "%u", num);
-
-	str[len] = '\0';
+	len = strlen(str);
 	write(1, str, len);
 	return (len);
 }
@@ -47,24 +41,22 @@ int handle_u(va_list val, char *flags)
 
 int handle_o(va_list val, char *flags)
 {
-	unsigned int num = va_arg(val, unsigned int), len = 0, n;
+	unsigned long int num = va_arg(val, unsigned long int), len = 0;
 	char str[1024];
 
-	(void)flags;
+	if (*flags == 'l')
+		sprintf(str, "%lo", num);
+	else if (*flags == 'h')
+		sprintf(str, "%ho", num);
+	else
+		sprintf(str, "%o", num);
+
 	if (num == 0)
 	{
-		char zero = '0';
-
-		write(1, &zero, 1);
+		write(1, "0", 1);
 		return (1);
 	}
-	n = num;
-	while (n > 0)
-	{
-		len++;
-		n /= 8;
-	}
-	sprintf(str, "%o", num);
+	len = strlen(str);
 	write(1, str, len);
 	return (len);
 }
@@ -78,32 +70,29 @@ int handle_o(va_list val, char *flags)
 
 int handle_x(va_list val, char *flags)
 {
-	unsigned int num = va_arg(val, unsigned int), len = 0, n;
+	unsigned long int num = va_arg(val, unsigned long int), len = 0;
 	char str[1024];
 
-	(void)flags;
-	n = num;
-	if (n == 0)
-	{
-		char zero = '0';
+	if (*flags == 'l')
+		sprintf(str, "%lx", num);
+	else if (*flags == 'h')
+		sprintf(str, "%hx", num);
+	else
+		sprintf(str, "%x", num);
 
-		write(1, &zero, 1);
+	if (num == 0)
+	{
+		write(1, "0", 1);
 		return (1);
-
 	}
-	while (n > 0)
-	{
-		len++;
-		n /= 16;
-	}
-	sprintf(str, "%x", num);
+	len = strlen(str);
 	write(1, str, len);
 	return (len);
 }
 /**
  * handle_X - print hexadecimal in uppercase
  * @val: input value
- * @flags: string
+ * @flags: sting
  * Return: return length
 */
 int handle_X(va_list val, char *flags)
@@ -111,17 +100,12 @@ int handle_X(va_list val, char *flags)
 	unsigned long int num = va_arg(val, unsigned long int), len = 0, i;
 	char str[1024];
 
-	(void)flags;
-
-	/**
-	* while (n > 0)
-	* {
-	*	len++;
-	*	n /= 16;
-	* }
-	*/
-
-	sprintf(str, "%X", num);
+	if (*flags == 'l')
+		sprintf(str, "%lX", num);
+	else if (*flags == 'h')
+		sprintf(str, "%hX", num);
+	else
+		sprintf(str, "%X", num);
 	for (i = 0 ; str[i] != '\0' ; i++)
 	{
 		if (str[i] >= 'a' && str[i] <= 'z')
