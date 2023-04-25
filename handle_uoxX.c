@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <string.h>
+
 /**
  * handle_u - write unsigned int
  * @val: input value
@@ -31,17 +32,19 @@ int handle_u(va_list val, char *flags)
 		n /= 10;
 	}
 	sprintf(str, "%u", num);
-	
+
 	str[len] = '\0';
 	write(1, str, len);
 	return (len);
 }
+
 /**
  * handle_o - write unsigned octal int
  * @val: input value
  * @flags: string
  * Return: return length
 */
+
 int handle_o(va_list val, char *flags)
 {
 	unsigned int num = va_arg(val, unsigned int), len = 0, n;
@@ -109,13 +112,15 @@ int handle_X(va_list val, char *flags)
 	char str[1024];
 
 	(void)flags;
-	/*
-	while (n > 0)
-	{
-		len++;
-		n /= 16;
-	}
+
+	/**
+	* while (n > 0)
+	* {
+	*	len++;
+	*	n /= 16;
+	* }
 	*/
+
 	sprintf(str, "%X", num);
 	for (i = 0 ; str[i] != '\0' ; i++)
 	{
