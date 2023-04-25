@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include "main.h"
-#include <limits.h>
 #include <string.h>
-#include <stdlib.h>
 
 /**
  * handle_S - print string
@@ -13,19 +11,23 @@
 
 int handle_S(va_list val, char *flags)
 {
-	char *str;
-	char *ch = NULL;
-	int len;
+	char *str = va_arg(val, char *);
+	int len = 0;
+	char ch[2];
 	(void)flags;
 
-	str = va_arg(val, char *);
-
-	if (str)
+	while (*str != '\0')
 	{
-		len = strlen(str);
+		if (*str < 32 || *str >= 127)
+		{
+			len += write(1, "\\x", 2);
+			sprintf(ch, "%02X", *str);
+			len += write(1, ch, 2);
+		}
+		else
+			len += write(1, str, 1);
+		str++;
 	}
-	sprintf(ch, "%S", str);
-	write(1, str, len);
 	return (len);
 }
 

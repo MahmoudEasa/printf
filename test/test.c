@@ -64,7 +64,8 @@ int main(void)
 
 	printf("++++++++++++++++++++++++++++++++++++++++++++\n");
 
-
+	_len = _printf("%S\n", "Best\nSchool");
+	printf("\n_printf_len: %d", _len);
 
 	return (0);
 }
