@@ -12,6 +12,7 @@ int main(void)
 	unsigned long int ui, zero, neg,_len = 0, len = 0;
 	void *addr;
 	char str[] = "lobna";
+	char ch[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	ui = (unsigned long int)INT_MAX + 1024;
 	addr = (void *)0x7ffe637541f0;
 	neg = -12234562;
@@ -80,5 +81,10 @@ int main(void)
 
 	_len = _printf("Unknown:[%r]\n", str);
 	printf("\n len before, len after %d\n", _len);
- 	 return (0);
+ 	
+	printf("++++++++++++++++++++++++++++++++++++++++++++\n");
+
+	_len = _printf("R:--> [%R]: \n", ch);
+	printf("%d\n", _len);
+	return (0);
 }
