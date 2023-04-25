@@ -78,13 +78,13 @@ int handle_x(va_list val, char *flags)
 	char str[1024];
 
 	(void)flags;
-
+	n = num;
 	if (num == 0)
 	{
-		int zero = '0';
+		char zero = '0';
 
 		write(1, &zero, 1);
-		return (1);
+		return (0);
 	}
 	while (n > 0)
 	{
@@ -107,13 +107,6 @@ int handle_X(va_list val, char *flags)
 	char str[1024];
 
 	(void)flags;
-	if (num == 0)
-	{
-		int zero = '0';
-
-		write(1, &zero, 1);
-		return (1);
-	}
 	n = num;
 	while (n > 0)
 	{
