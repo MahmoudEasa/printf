@@ -114,6 +114,13 @@ int main(void)
 	len = _printf("Actual %li %ld \n", UINT_MAX, UINT_MAX);
 	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
 
+	_printf("\n===================================\n");
+
+	len2 = printf("Expected  %hi %hd\n", INT_MAX, INT_MAX);
+	len = _printf("Actual %hi %hd \n", INT_MAX, INT_MAX);
+	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
+
+
 	return (0);
 }
 
