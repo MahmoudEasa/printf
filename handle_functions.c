@@ -38,7 +38,7 @@ int handel_fun(const char *format, Conversion *con, int CON_LEN,
 }
 
 /**
- * handle_flags - handle flags
+ * get_flags - handle flags
  * @format: string
  * @flags: string
  *
