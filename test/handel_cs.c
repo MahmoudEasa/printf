@@ -128,6 +128,17 @@ int main(void)
 	len = _printf("Actual    %hi %hd\n", -1, -1);
 	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
 
+	len = _printf("Unknown:[%r]\n");
+	len2 = printf("Unknown:[%r]\n");
+	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
+
+
+	len = _printf("Percent:[%%]\n");
+	len2 = printf("Percent:[%%]\n");
+	_printf("Len:[%d]\n", len);
+	printf("Len:[%d]\n", len2);
+
+
 
 
 	return (0);

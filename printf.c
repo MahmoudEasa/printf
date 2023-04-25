@@ -79,7 +79,7 @@ int print_buffer(const char *format, Conversion *con, va_list arg)
 			}
 			else
 			{
-				move = handle_flags(format, flags);
+				move = get_flags(format, flags);
 				format += handel_fun(format, con, CON_LEN,
 						&char_printed, _write, arg, flags, move);
 			}
