@@ -27,7 +27,7 @@ int handle_R(va_list val, char *flags)
 			{
 				ch = s2[j];
 				write(1, &ch, 1);
-				len++;			
+				len++;
 				break;
 			}
 		}
