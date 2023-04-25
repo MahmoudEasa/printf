@@ -11,6 +11,7 @@ int main(void)
 {
 	unsigned long int ui, zero, neg,_len = 0, len = 0;
 	void *addr;
+	char str[] = "lobna";
 	ui = (unsigned long int)INT_MAX + 1024;
 	addr = (void *)0x7ffe637541f0;
 	neg = -12234562;
@@ -75,5 +76,9 @@ int main(void)
 	len = printf("Address:[%p]\n", addr);
 	printf("\n_printf_len: %d printf_len: %d\n", _len, len);
 
+	printf("+++++++++++++++++++++++++++++++++++++++++++\n");
+
+	 _len = _printf("Unknown:[%r]\n", str);
+	 len = printf("Unknown:[%r]\n", str);
 	return (0);
 }
