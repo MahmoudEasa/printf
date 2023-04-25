@@ -17,15 +17,14 @@ int handle_r(va_list val, char *flags)
 	(void)flags;
 
 	len = strlen(str);
-	if (str == NULL)
-		str = "(Null)";
+	
 	for (i = 0 ; i < len / 2 ; i++)
 	{
 		rev = str[i];
 		str[i] = str[len - 1 - i];
 		str[len - 1 - i] = rev;
 	}
-	write(1, str, len);
+	len = write(1, str, len);
 	return (len);
 }
 
@@ -55,7 +54,6 @@ int handle_R(va_list val, char *flags)
 			}
 		}
 	}
-	len = strlen(str);
-	write(1, str, len);
+	len = write(1, str, len);
 	return (len);
 }
