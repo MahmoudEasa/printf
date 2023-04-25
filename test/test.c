@@ -78,7 +78,7 @@ int main(void)
 
 	printf("+++++++++++++++++++++++++++++++++++++++++++\n");
 
-	 _len = _printf("Unknown:[%r]\n", str);
-	 len = printf("Unknown:[%r]\n", str);
-	return (0);
+	_len = _printf("Unknown:[%r]\n", str);
+	printf("\n len before, len after %d\n", _len);
+ 	 return (0);
 }
