@@ -12,8 +12,8 @@ int main(void)
 
 	ui = (unsigned int)INT_MAX + 1024;
 
-	len = _printf("\n%%character \\ is: %t%r%w% 0-.1v%4\t %c%%\n string:\t %% %s x04[dd]{ff]}} \" \' done%%%d\n", ch, ptr, p);
-	len2 = printf("\n%%character \\ is: %t%r%w% 0-.1v%4\t %c%%\n string:\t %% %s x04[dd]{ff]}} \" \' done%%%d\n", ch, ptr, p);
+	len = _printf("\n%%character \\ is: %t%h%w% 0-.1v%4\t %c%%\n string:\t %% %s x04[dd]{ff]}} \" \' done%%%d\n", ch, ptr, p);
+	len2 = printf("\n%%character \\ is: %t%h%w% 0-.1v%4\t %c%%\n string:\t %% %s x04[dd]{ff]}} \" \' done%%%d\n", ch, ptr, p);
 	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
 	_printf("\n=============================\n");
 
