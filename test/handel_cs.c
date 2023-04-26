@@ -138,6 +138,7 @@ int main(void)
 	len2 = printf("TEST:[%5u]\n", 5);
 	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
+<<<<<<< HEAD
 	printf("\n------------------ -5u -------------------\n");
 	len = _printf("_TEST:[%-5u]\n", 5);
         len2 = printf("TEST:[%-5u]\n", 5);
@@ -155,6 +156,20 @@ int main(void)
         len2 = printf("TEST:[%05u]\n", 5);
         _printf("Len:[%d]\n", len);
         printf("Len:[%d]\n", len2);
+=======
+
+
+	len2 = printf("Expected  %hi %hd\n", LONG_MAX, LONG_MAX);
+	len = _printf("Actual    %hi %hd\n", LONG_MAX, LONG_MAX);
+	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
+
+	len2 = printf("Expected  %hi %hd\n", LONG_MIN, LONG_MIN);
+	len = _printf("Actual    %hi %hd\n", LONG_MIN, LONG_MIN);
+	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
+
+
+
+>>>>>>> ab7b69f7d67465694dc2eae52ab24fd9954ec63a
 
 	return (0);
 }
