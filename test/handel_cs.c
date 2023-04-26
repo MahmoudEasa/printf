@@ -221,6 +221,9 @@ int main(void)
 	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
 
 
+	len = _printf("%");
+	len2 = printf("%");
+	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
 
 
 	return (0);
