@@ -33,7 +33,9 @@ int _printf(const char *format, ...)
 	va_start(arg, format);
 		if (format)
 			if (format[0] == '%' && format[1] == '\0')
+			{
 				return (-1);
+			}
 			else
 				char_printed = print_buffer(format, con, arg);
 		else
