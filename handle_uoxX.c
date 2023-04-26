@@ -27,6 +27,7 @@ int handle_u(va_list val, char *flags)
 		write(1, "0", 1);
 		return (1);
 	}
+	handle_flags(flags, str);
 	len = strlen(str);
 	write(1, str, len);
 	return (len);

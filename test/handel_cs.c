@@ -133,13 +133,28 @@ int main(void)
 	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
 
 
-	len = _printf("Percent:[%%]\n");
-	len2 = printf("Percent:[%%]\n");
+	printf("\n----------------- 5u --------------------\n");
+	len = _printf("_TEST:[%5u]\n", 5);
+	len2 = printf("TEST:[%5u]\n", 5);
 	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
+	printf("\n------------------ -5u -------------------\n");
+	len = _printf("_TEST:[%-5u]\n", 5);
+        len2 = printf("TEST:[%-5u]\n", 5);
+        _printf("Len:[%d]\n", len);
+        printf("Len:[%d]\n", len2);
 
+	printf("\n------------------ -05u -------------------\n");
+        len = _printf("_TEST:[%-05u]\n", 5);
+        len2 = printf("TEST:[%-05u]\n", 5);
+        _printf("Len:[%d]\n", len);
+        printf("Len:[%d]\n", len2);
 
-
+	printf("\n------------------ 05u -------------------\n");
+        len = _printf("_TEST:[%05u]\n", 5);
+        len2 = printf("TEST:[%05u]\n", 5);
+        _printf("Len:[%d]\n", len);
+        printf("Len:[%d]\n", len2);
 
 	return (0);
 }
