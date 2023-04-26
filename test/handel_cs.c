@@ -133,30 +133,83 @@ int main(void)
 	printf("\n_printf_len: %d printf_len: %d\n", len, len2);
 
 
+	printf("\n################### U ######################\n");
+
 	printf("\n----------------- 5u --------------------\n");
-	len = _printf("_TEST:[%5u]\n", 5);
-	len2 = printf("TEST:[%5u]\n", 5);
+	len = _printf("_TEST:[%+5u]\n", 5);
+	len2 = printf("TEST:[%+5u]\n", 5);
 	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
-<<<<<<< HEAD
+
 	printf("\n------------------ -5u -------------------\n");
-	len = _printf("_TEST:[%-5u]\n", 5);
-        len2 = printf("TEST:[%-5u]\n", 5);
+	len = _printf("_TEST:[%+-5u]\n", 5);
+        len2 = printf("TEST:[%+-5u]\n", 5);
         _printf("Len:[%d]\n", len);
         printf("Len:[%d]\n", len2);
 
 	printf("\n------------------ -05u -------------------\n");
-        len = _printf("_TEST:[%-05u]\n", 5);
-        len2 = printf("TEST:[%-05u]\n", 5);
+        len = _printf("_TEST:[%+-05u]\n", 5);
+        len2 = printf("TEST:[%+-05u]\n", 5);
         _printf("Len:[%d]\n", len);
         printf("Len:[%d]\n", len2);
 
 	printf("\n------------------ 05u -------------------\n");
-        len = _printf("_TEST:[%05u]\n", 5);
-        len2 = printf("TEST:[%05u]\n", 5);
+        len = _printf("_TEST:[%+05u]\n", 5);
+        len2 = printf("TEST:[%+05u]\n", 5);
         _printf("Len:[%d]\n", len);
         printf("Len:[%d]\n", len2);
-=======
+	
+	printf("\n################### D ######################\n");
+	printf("\n----------------- 5d --------------------\n");
+        len = _printf("_TEST:[%+5d]\n", -598239277);
+        len2 = printf("TEST:[%+5d]\n", -598239277);
+        _printf("Len:[%d]\n", len);
+        printf("Len:[%d]\n", len2);
+
+        printf("\n------------------ -5d -------------------\n");
+        len = _printf("_TEST:[%+-5d]\n", -598239277);
+        len2 = printf("TEST:[%+-5d]\n", -598239277);
+        _printf("Len:[%d]\n", len);
+        printf("Len:[%d]\n", len2);
+
+        printf("\n------------------ -05d -------------------\n");
+        len = _printf("_TEST:[%+-05d]\n", -598239277);
+        len2 = printf("TEST:[%+-05d]\n", -598239277);
+        _printf("Len:[%d]\n", len);
+        printf("Len:[%d]\n", len2);
+
+        printf("\n------------------ 05d -------------------\n");
+        len = _printf("_TEST:[%+05d]\n", -598239277);
+        len2 = printf("TEST:[%+05d]\n", -598239277);
+        _printf("Len:[%d]\n", len);
+        printf("Len:[%d]\n", len2);
+
+
+	printf("\n################### I ######################\n");
+        printf("\n----------------- 5i --------------------\n");
+        len = _printf("_TEST:[%+5i]\n", -598239277);
+        len2 = printf("TEST:[%+5i]\n", -598239277);
+        _printf("Len:[%d]\n", len);
+        printf("Len:[%d]\n", len2);
+
+        printf("\n------------------ -5i -------------------\n");
+        len = _printf("_TEST:[%+-5i]\n", -598239277);
+        len2 = printf("TEST:[%+-5i]\n", -598239277);
+        _printf("Len:[%d]\n", len);
+        printf("Len:[%d]\n", len2);
+
+        printf("\n------------------ -05i -------------------\n");
+        len = _printf("_TEST:[%+-05i]\n", -598239277);
+        len2 = printf("TEST:[%+-05i]\n", -598239277);
+        _printf("Len:[%d]\n", len);
+        printf("Len:[%d]\n", len2);
+
+        printf("\n------------------ 05i -------------------\n");
+        len = _printf("_TEST:[%+05i]\n", -598239277);
+        len2 = printf("TEST:[%+05i]\n", -598239277);
+        _printf("Len:[%d]\n", len);
+        printf("Len:[%d]\n", len2);
+
 
 
 	len2 = printf("Expected  %hi %hd\n", LONG_MAX, LONG_MAX);
@@ -169,7 +222,6 @@ int main(void)
 
 
 
->>>>>>> ab7b69f7d67465694dc2eae52ab24fd9954ec63a
 
 	return (0);
 }

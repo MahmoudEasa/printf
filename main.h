@@ -31,6 +31,7 @@ int handle_S(va_list val, char *flags);
 int handle_p(va_list val, char *flags);
 int handle_r(va_list val, char *flags);
 int handle_R(va_list val, char *flags);
+void handle_plus(char *flags, char *str);
 void handle_flags(char *flags, char *str);
 int print_buffer(const char *format, Conversion *con, va_list arg);
 void _write(const char *format, int *n);

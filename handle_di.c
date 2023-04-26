@@ -23,8 +23,9 @@ int handle_d(va_list val, char *flags)
 		sprintf(str, "%hd", num);
 	else
 		sprintf(str, "%d", num);
-	len = strlen(str);
 
+	handle_flags(flags, str);
+	len = strlen(str);
 	write(1, str, len);
 	return (len);
 }
@@ -50,6 +51,8 @@ int handle_i(va_list val, char *flags)
 		sprintf(str, "%hd", num);
 	else
 		sprintf(str, "%d", num);
+
+	handle_flags(flags, str);
 	len = strlen(str);
 
 	write(1, str, len);
